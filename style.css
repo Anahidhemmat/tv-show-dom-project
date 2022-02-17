@@ -7,20 +7,51 @@
   list-style: none;
 }
 body {
-  background-color: #b4cfb0;
+  background-color: #f7ecde;
   font-family: "inter", sans-serif;
 }
 h1 {
   text-align: center;
   margin-top: 2rem;
   font-size: 4rem;
-  color: #4b5e5f;
+  color: #54bab9;
 }
 .header-con {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.search-input-con {
+  margin-bottom: 5rem;
+}
 .select-con {
   margin: 4rem 0;
+}
+.episode-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.list-items {
+  margin: 1rem;
+}
+.list-items img {
+  border-radius: 10px;
+}
+.list-items p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #54bab9;
+}
+.list-items i {
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
+.fa-circle-play {
+  color: #ff7878;
+}
+.fa-clock {
+  color: #d8ae78;
 }

@@ -25,7 +25,11 @@ const displayEpisodes = (episode) => {
     img.src = item.image.medium;
 
     const title = document.createElement("p");
-    title.innerText = `${item.name} - S0${item.season}E0${item.number}`;
+    if (item.number <= 9) {
+      title.innerText = `${item.name} - S0${item.season}E0${item.number}`;
+    } else {
+      title.innerText = `${item.name} - S0${item.season}E${item.number}`;
+    }
     const watchIcon = document.createElement("i");
     const timeIcon = document.createElement("i");
     watchIcon.classList.add("fa-solid", "fa-circle-play");
@@ -49,3 +53,5 @@ searchBar.addEventListener("keyup", (e) => {
     }
   }
 });
+
+//FILTER EPISODES

@@ -5,6 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tv Show Project</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Css file -->
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>TV SHOW</h1>
+      <section class="header-con">
+        <section class="select-con">
+          <select id="select-episode">
+            <option value="title">Choose an Episode</option>
+          </select>
+        </section>
+        <section class="search-input-con">
+          <input type="search" id="search-input" placeholder="Search Episode" />
+        </section>
+      </section>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <section class="episode-list-con">
+        <ul class="episode-list"></ul>
+      </section>
+    </main>
+    <!-- Script file -->
+    <script src="script.js"></script>
+  </body>
 </html>

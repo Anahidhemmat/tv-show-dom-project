@@ -3,6 +3,8 @@
 const episodesList = document.querySelector(".episode-list");
 const searchBar = document.querySelector("#search-input");
 const selectElement = document.querySelector("#select-episode");
+const searchIcon = document.querySelector(".search-icon");
+
 let episodes = [];
 
 //getting data from API
@@ -46,6 +48,15 @@ const displayEpisodes = (episode) => {
     watchIcon.classList.add("fa-solid", "fa-circle-play");
     timeIcon.classList.add("fa-solid", "fa-clock");
 
+    //create icon link element
+    const watchLink = document.createElement("a");
+    watchLink.innerText = `Wanna Watch?`;
+    watchLink.href = item.url;
+
+    //create watch time span element
+    const watchTime = document.createElement("span");
+    watchTime.innerText = `airtime:${item.airtime}`;
+
     //create option elements
     const optionElement = document.createElement("option");
     if (item.number <= 9) {
@@ -56,7 +67,7 @@ const displayEpisodes = (episode) => {
     optionElement.value = item.id;
 
     //append
-    li.append(img, title, watchIcon, timeIcon);
+    li.append(img, title, watchIcon, watchLink, timeIcon, watchTime);
     episodesList.append(li);
     selectElement.append(optionElement);
 
@@ -88,4 +99,10 @@ searchBar.addEventListener("keyup", (e) => {
       allEpisodes[i].style.display = "block";
     }
   }
+});
+
+//Search Box Style
+
+searchBar.addEventListener("mouseover", () => {
+  searchIcon.style.display = "block";
 });

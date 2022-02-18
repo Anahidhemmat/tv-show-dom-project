@@ -49,9 +49,18 @@ const displayEpisodes = (episode) => {
     timeIcon.classList.add("fa-solid", "fa-clock");
 
     //create icon link element
+    const span = document.createElement("span");
     const watchLink = document.createElement("a");
-    watchLink.innerText = `Wanna Watch?`;
     watchLink.href = item.url;
+    watchLink.innerText = `Wanna Watch?`;
+    watchLink.classList.add("watch-link");
+    console.log(watchLink);
+    span.addEventListener("mouseover", () => {
+      watchLink.classList.remove("watch-link");
+    });
+    span.addEventListener("mouseleave", () => {
+      watchLink.classList.add("watch-link");
+    });
 
     //create watch time span element
     const watchTime = document.createElement("span");
@@ -67,7 +76,8 @@ const displayEpisodes = (episode) => {
     optionElement.value = item.id;
 
     //append
-    li.append(img, title, watchIcon, watchLink, timeIcon, watchTime);
+    li.append(img, title, span, timeIcon, watchTime);
+    span.append(watchIcon, watchLink);
     episodesList.append(li);
     selectElement.append(optionElement);
 
@@ -93,16 +103,19 @@ searchBar.addEventListener("keyup", (e) => {
   const searchValue = e.target.value.toLowerCase();
   const allEpisodes = document.getElementsByClassName("list-items");
   for (let i = 0; i < allEpisodes.length; i++) {
-    if (!allEpisodes[i].innerText.toLowerCase().includes(searchValue)) {
-      allEpisodes[i].style.display = "none";
+    if (allEpisodes[i].innerText.toLowerCase().includes(searchValue)) {
+      allEpisodes[i].classList.remove("is-hidden");
     } else {
-      allEpisodes[i].style.display = "block";
+      allEpisodes[i].classList.add("is-hidden");
     }
   }
 });
 
 //Search Box Style
 
-searchBar.addEventListener("mouseover", () => {
-  searchIcon.style.display = "block";
+searchBar.addEventListener("click", () => {
+  searchBar.style.borderColor = "transparent";
+  searchBar.style.borderRadius = "0";
+  searchBar.style.borderBottomStyle = "solid";
+  searchBar.style.borderBottomColor = "rgb(104, 104, 104)";
 });

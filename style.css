@@ -7,14 +7,14 @@
   list-style: none;
 }
 body {
-  background-color: #f7ecde;
+  background-color: #c1f4c5;
   font-family: "inter", sans-serif;
 }
 h1 {
   text-align: center;
   margin-top: 2rem;
   font-size: 4rem;
-  color: #54bab9;
+  color: #65c18c;
 }
 .header-con {
   display: flex;
@@ -50,12 +50,27 @@ h1 {
   margin: 0.5rem;
   font-size: 1.5rem;
 }
+.list-items a {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.list-items a:active {
+  color: #ff7ba9;
+}
+.list-items a:hover {
+  color: #fff;
+}
 .fa-circle-play {
-  color: #ff7878;
+  color: #ff7ba9;
 }
 .fa-clock {
   color: #d8ae78;
 }
+.watch-link {
+  display: none;
+}
+
 .is-hidden {
   display: none;
 }
@@ -101,20 +116,20 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  transition: all 0.3s ease;
   padding: 5px;
   padding-left: 10px;
+  color: rgb(104, 104, 104);
 }
 #search-input {
-  background-color: #f7ecde;
+  background-color: #c1f4c5;
   font-size: 1rem;
   width: 20vw;
   padding: 0.8rem;
   padding-left: 3rem;
-  transition: all 0.3s ease-in-out;
-  border: 0.5px solid #000;
+  transition: all 0.4s ease-in-out;
+  border: 0.3px solid rgb(104, 104, 104);
   border-radius: 25px;
 }
 #search-input::placeholder {
-  color: #000;
+  color: rgb(104, 104, 104);
 }

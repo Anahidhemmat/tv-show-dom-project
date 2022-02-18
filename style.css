@@ -44,6 +44,7 @@ h1 {
   font-size: 1.1rem;
   margin: 0.5rem 0;
   color: #54bab9;
+  font-weight: 500;
 }
 .list-items i {
   margin: 0.5rem;
@@ -54,4 +55,36 @@ h1 {
 }
 .fa-clock {
   color: #d8ae78;
+}
+.is-hidden {
+  display: none;
+}
+.select-con {
+  overflow: hidden;
+  position: relative;
+}
+#select-episode {
+  background-color: #ff7878;
+  font-size: large;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.5rem 1.1rem;
+  width: 20rem;
+  color: #fff;
+  cursor: pointer;
+}
+.select-con::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  padding: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+.select-con:hover::after {
+  background-color: #fff;
+  color: #ff7878;
 }

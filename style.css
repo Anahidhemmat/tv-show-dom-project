@@ -35,21 +35,26 @@ h1 {
 
 .list-items {
   margin: 1rem;
+  position: relative;
 }
 .list-items img {
   border-radius: 10px;
+  margin: 2rem;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transition-duration: 0.3s;
+}
+.list-items img:hover {
+  transform: scale(1.1);
 }
 .list-items p {
   text-align: center;
   font-size: 1.1rem;
   margin: 0.5rem 0;
-  color: #54bab9;
+  color: #ff7ba9;
   font-weight: 500;
 }
-.list-items i {
-  margin: 0.5rem;
-  font-size: 1.5rem;
-}
+
 .list-items a {
   text-decoration: none;
   color: #000;
@@ -62,15 +67,43 @@ h1 {
   color: #fff;
 }
 .fa-circle-play {
-  color: #ff7ba9;
+  color: #ffbed8;
+  margin: 0.5rem;
+  font-size: 1.5rem;
 }
 .fa-clock {
   color: #d8ae78;
+  margin: 0.5rem;
+  font-size: 1.5rem;
 }
 .watch-link {
   display: none;
 }
 
+.img-sum {
+  width: 260px;
+  height: 200px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.img-sum:hover .episode-summery {
+  opacity: 1;
+  top: 0;
+}
+.episode-summery {
+  position: absolute;
+  top: 20%;
+  width: 80%;
+  opacity: 0;
+  background-color: #ffbed8de;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+  padding: 1rem;
+  border-radius: 10px;
+}
 .is-hidden {
   display: none;
 }

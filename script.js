@@ -34,6 +34,9 @@ const displayEpisodes = (episode) => {
     const img = document.createElement("img");
     img.src = item.image.medium;
 
+    //create div element for img & summery
+    const div = document.createElement("div");
+    div.classList.add("img-sum");
     //create title & episode
     const title = document.createElement("p");
     if (item.number <= 9) {
@@ -54,7 +57,6 @@ const displayEpisodes = (episode) => {
     watchLink.href = item.url;
     watchLink.innerText = `Wanna Watch?`;
     watchLink.classList.add("watch-link");
-    console.log(watchLink);
     span.addEventListener("mouseover", () => {
       watchLink.classList.remove("watch-link");
     });
@@ -63,9 +65,16 @@ const displayEpisodes = (episode) => {
     });
 
     //create watch time span element
+    const span2 = document.createElement("span");
     const watchTime = document.createElement("span");
     watchTime.innerText = `airtime:${item.airtime}`;
-
+    watchTime.classList.add("watch-link");
+    span2.addEventListener("mouseover", () => {
+      watchTime.classList.remove("watch-link");
+    });
+    span2.addEventListener("mouseleave", () => {
+      watchTime.classList.add("watch-link");
+    });
     //create option elements
     const optionElement = document.createElement("option");
     if (item.number <= 9) {
@@ -75,11 +84,23 @@ const displayEpisodes = (episode) => {
     }
     optionElement.value = item.id;
 
+    //summery part
+    const summery = document.createElement("div");
+    summery.classList.add("episode-summery");
+    const episodeSummary = item.summary
+      .replace("<p>", "")
+      .split(" ")
+      .slice(0, 12)
+      .join(" ");
+    summery.innerHTML = `${episodeSummary}...`;
+
     //append
-    li.append(img, title, span, timeIcon, watchTime);
+    li.append(div, title, span, span2, summery);
     span.append(watchIcon, watchLink);
+    span2.append(timeIcon, watchTime);
     episodesList.append(li);
     selectElement.append(optionElement);
+    div.append(img, summery);
 
     //select eventlistener
     selectElement.addEventListener("change", (e) => {
